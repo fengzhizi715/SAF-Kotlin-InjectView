@@ -40,23 +40,21 @@ object Injector {
                         e.printStackTrace()
                     }
 
+                    if (field == null) return null;
+
                     if (value == null) {
-                        if (field!!.type.name == Int::class.java.name || field.type.name == "int") {
-                            value = 0
-                        } else if (field.type.name == Boolean::class.java.name || field.type.name == "boolean") {
-                            value = false
-                        } else if (field.type.name == java.lang.String::class.java.name) {
-                            value = ""
-                        } else if (field.type.name == Long::class.java.name || field.type.name == "long") {
-                            value = 0L
-                        } else if (field.type.name == Double::class.java.name || field.type.name == "double") {
-                            value = 0.0
+                        when {
+                            field.type.name == Int::class.java.name || field.type.name == "int" -> value = 0
+                            field.type.name == Boolean::class.java.name || field.type.name == "boolean" -> value = false
+                            field.type.name == java.lang.String::class.java.name -> value = ""
+                            field.type.name == Long::class.java.name || field.type.name == "long" -> value = 0L
+                            field.type.name == Double::class.java.name || field.type.name == "double" -> value = 0.0
                         }
                     }
 
                     if (value != null) {
                         try {
-                            field!!.isAccessible = true
+                            field.isAccessible = true
                             field.set(source, value)
                             return field.get(source)
                         } catch (e: IllegalAccessException) {

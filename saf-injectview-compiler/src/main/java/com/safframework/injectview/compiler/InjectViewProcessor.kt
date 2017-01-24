@@ -82,7 +82,7 @@ class InjectViewProcessor : AbstractProcessor() {
         var annotatedClass: AnnotatedClass? = null
         var field: BindViewField? = null
         val set = roundEnv.getElementsAnnotatedWith(InjectView::class.java) as Set<Element>
-        if (set != null && set.size > 0) {
+        if (set?.size > 0) {
             for (element in set) {
                 annotatedClass = getAnnotatedClass(element, "@InjectView")
                 if (annotatedClass == null)
@@ -98,7 +98,7 @@ class InjectViewProcessor : AbstractProcessor() {
         var annotatedClass: AnnotatedClass? = null
         var field: BindViewFields? = null
         val set = roundEnv.getElementsAnnotatedWith(InjectViews::class.java) as Set<Element>
-        if (set != null && set.size > 0) {
+        if (set?.size > 0) {
             for (element in set) {
                 annotatedClass = getAnnotatedClass(element, "@InjectViews")
                 if (annotatedClass == null)

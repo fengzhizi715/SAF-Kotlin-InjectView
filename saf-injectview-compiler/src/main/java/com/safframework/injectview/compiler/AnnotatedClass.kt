@@ -81,8 +81,8 @@ class AnnotatedClass(var mClassElement: TypeElement, var mElementUtils: Elements
                 val simpleName = clazz.substring(dot + 1)
                 val className = ClassName.get(packageName, simpleName)
 
-                for (id in ids!!) {
-                    injectMethodBuilder.addStatement("host.\$N.add((\$T)(finder.findById(source, \$L)))", field.fieldName, className, id)
+                ids?.map {
+                    injectMethodBuilder.addStatement("host.\$N.add((\$T)(finder.findById(source, \$L)))", field.fieldName, className, it)
                 }
             } else if (fieldTypeName.endsWith("[]")) {
                 val ids = field.resIds
@@ -106,7 +106,6 @@ class AnnotatedClass(var mClassElement: TypeElement, var mElementUtils: Elements
                     i++
                 }
             }
-
         }
 
         for (field in mExtraFields) {
@@ -118,7 +117,7 @@ class AnnotatedClass(var mClassElement: TypeElement, var mElementUtils: Elements
         if (mMethods.size > 0) {
             injectMethodBuilder.addStatement("\$T listener", TypeUtils.ANDROID_ON_CLICK_LISTENER)
 
-            for (method in mMethods) {
+            mMethods.map {
                 // declare OnClickListener anonymous class
                 val listener = TypeSpec.anonymousClassBuilder("")
                         .addSuperinterface(TypeUtils.ANDROID_ON_CLICK_LISTENER)
@@ -127,11 +126,11 @@ class AnnotatedClass(var mClassElement: TypeElement, var mElementUtils: Elements
                                 .addModifiers(Modifier.PUBLIC)
                                 .returns(TypeName.VOID)
                                 .addParameter(TypeUtils.ANDROID_VIEW, "view")
-                                .addStatement("host.\$N()", method.methodName)
+                                .addStatement("host.\$N()", it.methodName)
                                 .build())
                         .build()
                 injectMethodBuilder.addStatement("listener = \$L ", listener)
-                for (id in method.ids!!) {
+                for (id in it.ids!!) {
                     // set listeners
                     injectMethodBuilder.addStatement("finder.findById(source, \$L).setOnClickListener(listener)", id)
                 }

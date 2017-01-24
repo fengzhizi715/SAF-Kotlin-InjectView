@@ -23,7 +23,7 @@ public class SecondActivity extends Activity {
         Injector.injectInto(this);
 
         if (param!=null) {
-            Toast.makeText(SecondActivity.this,"param1="+param,Toast.LENGTH_SHORT).show();
+            Toast.makeText(SecondActivity.this,"param="+param,Toast.LENGTH_SHORT).show();
         }
     }
 }

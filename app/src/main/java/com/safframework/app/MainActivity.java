@@ -20,8 +20,15 @@ public class MainActivity extends Activity {
         Injector.injectInto(this);
     }
 
-    @OnClick(id={R.id.text})
-    void clickText() {
+    @OnClick(id={R.id.text1})
+    void clickText1() {
+
+        Intent i = new Intent(MainActivity.this,WebViewActivity.class);
+        startActivity(i);
+    }
+
+    @OnClick(id={R.id.text2})
+    void clickText2() {
 
         Intent i = new Intent(MainActivity.this,SecondActivity.class);
         i.putExtra("param","test");

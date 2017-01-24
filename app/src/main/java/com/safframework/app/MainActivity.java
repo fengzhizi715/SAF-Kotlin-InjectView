@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.safframework.app.dialog.CustomerDialog;
 import com.safframework.injectview.Injector;
 import com.safframework.injectview.annotations.OnClick;
 
@@ -48,5 +49,12 @@ public class MainActivity extends Activity {
 
         Intent i = new Intent(MainActivity.this,TestInjectViews.class);
         startActivity(i);
+    }
+
+    @OnClick(id={R.id.text5})
+    void clickText5() {
+
+        CustomerDialog dialog = new CustomerDialog(this, R.style.simpleDialogStyle);
+        dialog.show();
     }
 }

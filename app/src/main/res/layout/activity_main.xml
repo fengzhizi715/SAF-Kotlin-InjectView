@@ -47,6 +47,15 @@
         android:layout_margin="10dp"
         android:background="@drawable/textview_border"
         android:gravity="center"
+        android:text="dialog中使用@InjectView"/>
+
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/textview_border"
+        android:gravity="center"
         android:text="点击效果同上"/>
 
 </LinearLayout>

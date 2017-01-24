@@ -112,7 +112,7 @@ class InjectViewProcessor : AbstractProcessor() {
 
     private fun processInjectExtra(roundEnv: RoundEnvironment) {
         val set = roundEnv.getElementsAnnotatedWith(InjectExtra::class.java) as Set<Element>
-        if (set != null && set.size > 0) {
+        if (set?.size > 0) {
             var annotatedClass: AnnotatedClass? = null
             var field: ExtraField? = null
             for (element in set) {

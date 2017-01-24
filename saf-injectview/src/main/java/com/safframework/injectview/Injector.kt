@@ -111,6 +111,18 @@ object Injector {
     }
 
     /**
+     * 在dialog中使用注解
+     * @param dialog
+     * *
+     * @param v
+     * *
+     * @return
+     */
+    @JvmStatic fun injectInto(dialog: Dialog) {
+        inject(dialog, dialog, Finder.DIALOG)
+    }
+
+    /**
      * 在adapter中使用注解
      * @param obj
      * *

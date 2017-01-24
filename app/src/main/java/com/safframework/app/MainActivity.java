@@ -42,4 +42,11 @@ public class MainActivity extends Activity {
         i.putExtra("param","test");
         startActivity(i);
     }
+
+    @OnClick(id={R.id.text4})
+    void clickText4() {
+
+        Intent i = new Intent(MainActivity.this,TestInjectViews.class);
+        startActivity(i);
+    }
 }

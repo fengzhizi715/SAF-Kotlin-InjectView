@@ -18,6 +18,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    // 多个jar包里包含了同样的文件（NOTICE.txt）,导致打包时因为担心相互覆盖问题而提示出错, 去掉这2个文件
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    compileOptions {
+        sourceCompatibility = "1.7"
+        targetCompatibility = "1.7"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {

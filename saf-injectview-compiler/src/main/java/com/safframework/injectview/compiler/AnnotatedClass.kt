@@ -139,7 +139,7 @@ class AnnotatedClass(var mClassElement: TypeElement, var mElementUtils: Elements
         }
 
         // generate whole class
-        val finderClass = TypeSpec.classBuilder(mClassElement.simpleName.toString() + "$\$ViewBinder")
+        val finderClass = TypeSpec.classBuilder(mClassElement.simpleName.toString() + "\$\$ViewBinder")
                 .addModifiers(Modifier.PUBLIC)
                 .addSuperinterface(ParameterizedTypeName.get(TypeUtils.VIEW_BINDER, TypeName.get(mClassElement.asType())))
                 .addMethod(injectMethodBuilder.build())

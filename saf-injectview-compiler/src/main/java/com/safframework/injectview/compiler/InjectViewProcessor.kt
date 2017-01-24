@@ -40,10 +40,10 @@ class InjectViewProcessor : AbstractProcessor() {
      */
     override fun getSupportedAnnotationTypes(): Set<String> {
         val types = LinkedHashSet<String>()
-        types.add(InjectView::class.java.simpleName)
-        types.add(InjectViews::class.java.simpleName)
-        types.add(OnClick::class.java.simpleName)
-        types.add(InjectExtra::class.java.simpleName)
+        types.add(InjectView::class.java.canonicalName)
+        types.add(InjectViews::class.java.canonicalName)
+        types.add(OnClick::class.java.canonicalName)
+        types.add(InjectExtra::class.java.canonicalName)
         return types
     }
 

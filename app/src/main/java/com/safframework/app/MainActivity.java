@@ -34,4 +34,12 @@ public class MainActivity extends Activity {
         i.putExtra("param","test");
         startActivity(i);
     }
+
+    @OnClick(id={R.id.text3})
+    void clickText3() {
+
+        Intent i = new Intent(MainActivity.this,FragmentActivity.class);
+        i.putExtra("param","test");
+        startActivity(i);
+    }
 }

@@ -1,16 +1,19 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
     defaultConfig {
-        applicationId "com.safframework.app"
         minSdkVersion 9
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -27,7 +30,23 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile project(':saf-injectview-annotations')
+}
 
-    compile project(':saf-injectview')
-    apt project(':saf-injectview-compiler')
+repositories {
+    jcenter()
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+    //加上这些
+    tasks.withType(Javadoc) {
+        options{ encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
 }

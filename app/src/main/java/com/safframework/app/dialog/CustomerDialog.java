@@ -25,6 +25,7 @@ public class CustomerDialog extends Dialog {
         super(context);
         this.context = context;
     }
+
     public CustomerDialog(Context context, int theme){
         super(context, theme);
         this.context = context;
@@ -39,9 +40,8 @@ public class CustomerDialog extends Dialog {
         textView.setText("this textview is for customer dialog!");
     }
 
-
     @OnClick(id={R.id.dialog_button})
-    void clickText1() {
+    void click() {
 
         dismiss();
     }

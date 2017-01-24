@@ -31,17 +31,15 @@ public class MainActivity extends Activity {
     @OnClick(id={R.id.text2})
     void clickText2() {
 
-        Intent i = new Intent(MainActivity.this,SecondActivity.class);
-        i.putExtra("param","test");
+        Intent i = new Intent(MainActivity.this,FragmentActivity.class);
         startActivity(i);
     }
 
     @OnClick(id={R.id.text3})
     void clickText3() {
 
-        Intent i = new Intent(MainActivity.this,FragmentActivity.class);
-        i.putExtra("param","test");
-        startActivity(i);
+        CustomerDialog dialog = new CustomerDialog(this, R.style.simpleDialogStyle);
+        dialog.show();
     }
 
     @OnClick(id={R.id.text4})
@@ -54,7 +52,8 @@ public class MainActivity extends Activity {
     @OnClick(id={R.id.text5})
     void clickText5() {
 
-        CustomerDialog dialog = new CustomerDialog(this, R.style.simpleDialogStyle);
-        dialog.show();
+        Intent i = new Intent(MainActivity.this,SecondActivity.class);
+        i.putExtra("param","test");
+        startActivity(i);
     }
 }

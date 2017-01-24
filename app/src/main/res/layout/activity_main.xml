@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="150dp"
-        android:layout_height="50dp" />
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/textview_border"
+        android:text="activity之间传递参数"/>
 
-</RelativeLayout>
+</LinearLayout>

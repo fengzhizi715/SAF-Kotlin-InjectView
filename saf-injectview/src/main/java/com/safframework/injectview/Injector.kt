@@ -120,22 +120,20 @@ object Injector {
      * *
      * @return
      */
-    @JvmStatic fun injectInto(obj: Any, v: View) {
+    @JvmStatic fun injectInto(obj: Object, v: View) {
         inject(obj, v, Finder.VIEW_HOLDER)
     }
 
-    private fun inject(host: Any, source: Any, finder: Finder) {
+    private fun inject(host: Any, source: Any,finder: Finder) {
         val className = host.javaClass.name
         try {
-            println (className+"\$\$ViewBinder")
             val finderClass = Class.forName(className+"\$\$ViewBinder")
-            println ("finderClass="+finderClass)
-            val viewBinder = finderClass.newInstance() as ViewBinder
+
+            val viewBinder = finderClass.newInstance() as ViewBinder<Any>
             viewBinder.inject(host, source, finder)
         } catch (e: Exception) {
             // throw new RuntimeException("Unable to inject for " + className, e);
             println("Unable to inject for " + className)
-            println(e.cause.toString())
         }
 
     }

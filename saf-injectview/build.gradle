@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 25
@@ -49,4 +50,13 @@ allprojects {
             links "http://docs.oracle.com/javase/7/docs/api"
         }
     }
+}
+
+publish{
+    userOrg = 'fengzhizi715'
+    groupId = 'com.safframework.injectview'
+    artifactId = 'saf-injectview'
+    publishVersion = '1.0.0'
+    desc = 'this is a injectview library for android'
+    website = 'https://github.com/fengzhizi715/SAF-Kotlin-InjectView'
 }

@@ -45,12 +45,19 @@ public class MainActivity extends Activity {
     @OnClick(id={R.id.text4})
     void clickText4() {
 
-        Intent i = new Intent(MainActivity.this,TestInjectViews.class);
+        Intent i = new Intent(MainActivity.this,TestViewActivity.class);
         startActivity(i);
     }
 
     @OnClick(id={R.id.text5})
     void clickText5() {
+
+        Intent i = new Intent(MainActivity.this,TestInjectViews.class);
+        startActivity(i);
+    }
+
+    @OnClick(id={R.id.text6,R.id.text7})
+    void clickText6() {
 
         Intent i = new Intent(MainActivity.this,SecondActivity.class);
         i.putExtra("param","test");

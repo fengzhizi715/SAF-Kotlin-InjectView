@@ -60,7 +60,6 @@ object Injector {
                         } catch (e: IllegalAccessException) {
                             e.printStackTrace()
                         }
-
                     }
                 }
 
@@ -73,11 +72,6 @@ object Injector {
             }
         },
         VIEW {
-            override fun findById(source: Any, id: Int): View {
-                return (source as View).findViewById(id)
-            }
-        },
-        VIEW_HOLDER {
             override fun findById(source: Any, id: Int): View {
                 return (source as View).findViewById(id)
             }
@@ -101,9 +95,8 @@ object Injector {
     /**
      * 在fragment中使用注解
      * @param fragment
-     * *
      * @param v
-     * *
+     *
      * @return
      */
     @JvmStatic fun injectInto(fragment: Fragment, v: View) {
@@ -113,9 +106,7 @@ object Injector {
     /**
      * 在dialog中使用注解
      * @param dialog
-     * *
-     * @param v
-     * *
+     *
      * @return
      */
     @JvmStatic fun injectInto(dialog: Dialog) {
@@ -123,15 +114,14 @@ object Injector {
     }
 
     /**
-     * 在adapter中使用注解
+     * 在view中使用注解
      * @param obj
-     * *
      * @param v
-     * *
+     *
      * @return
      */
     @JvmStatic fun injectInto(obj: Object, v: View) {
-        inject(obj, v, Finder.VIEW_HOLDER)
+        inject(obj, v, Finder.VIEW)
     }
 
     private fun inject(host: Any, source: Any,finder: Finder) {

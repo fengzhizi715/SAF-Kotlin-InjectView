@@ -179,15 +179,10 @@ OnClick
              return v;
         }
 
-	    @OnClick(id={R.id.left_menu,R.id.btn_comment_cancel}, after = "pointClickView")
+	    @OnClick(id={R.id.left_menu,R.id.btn_comment_cancel})
 	    void clickLeftMenu() {
 		    popBackStack();
 	    }
-
-      public void pointClickView(Method method, View view) {
-        L.d("pointClickView");
-        ....
-      }
 
 	    @OnClick(id=R.id.btn_comment_send)
 	    void clickCommentSend() {

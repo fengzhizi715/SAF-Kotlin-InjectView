@@ -1,6 +1,6 @@
 # SAF-Kotlin-InjectView
 
-下载安装
+#下载安装
 
 在根目录下的build.gradle中添加
 ```groovy
@@ -9,7 +9,7 @@
          jcenter()
      }
      dependencies {
-         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
      }
  }
 ```
@@ -27,6 +27,7 @@ dependencies {
 }
 ```
 
+# 特性
 这个库原本是SAF的Dependency Injection(依赖注入)模块，简称DI。现在用`Kotlin`全部重写。
 
 SAF中的依赖注入已经发展到第二个版本，由原先的运行时注解替换成编译时注解，底层依赖Square javapoet。
@@ -39,6 +40,7 @@ SAF中的DI包括以下几个方面：
 * OnClick：简化各种组件的Click事件写法
 
 
+# 使用方法
 Inject View
 ---
 Inject View可以简化组件的查找注册，包括android自带的组件和自定义组件。在使用Inject View之前，我们会这样写代码

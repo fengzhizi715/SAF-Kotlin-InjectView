@@ -1,7 +1,6 @@
 # SAF-Kotlin-InjectView
 
-# 下载安装
-
+# 下载安装：
 在根目录下的build.gradle中添加
 ```groovy
  buildscript {
@@ -9,7 +8,7 @@
          jcenter()
      }
      dependencies {
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
      }
  }
 ```
@@ -27,28 +26,18 @@ dependencies {
 }
 ```
 
-# 特性
-这个库原本是SAF的Dependency Injection(依赖注入)模块，简称DI。现在用`Kotlin`全部重写。
-
-SAF中的依赖注入已经发展到第二个版本，由原先的运行时注解替换成编译时注解，底层依赖Square javapoet。
-其实，ButterKnife已经足够强大了，为何还要再做一套呢？因为这个模块更加轻量级。
-
-SAF中的DI包括以下几个方面：
-* Inject View ：简化组件的查找注册
-* Inject Views：支持多个相同类型组件的注入
-* Inject Extra ：简化2个Activity之间Extra传递
-* OnClick：简化各种组件的Click事件写法
+![](injectview demo演示.gif)
 
 
-# 使用方法
-Inject View
+# 使用方法：
+1. @InjectView
 ---
-Inject View可以简化组件的查找注册，包括android自带的组件和自定义组件。在使用Inject View之前，我们会这样写代码
+@InjectView可以简化组件的查找注册，包括android自带的组件和自定义组件。在使用@InjectView之前，我们会这样写代码
 
 ```Java
           public class MainActivity extends Activity {
 
-                private ImageView imageView;
+                ImageView imageView;
 
                 @Override
                 protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +50,13 @@ Inject View可以简化组件的查找注册，包括android自带的组件和�
  ```
 
 
-在使用Inject View之后，会这样写代码
+在使用@InjectView之后，会这样写代码
 
 ```Java
           public class MainActivity extends Activity {
 
                 @InjectView(R.id.imageView)
-                private ImageView imageView;
+                ImageView imageView;
 
                 @Override
                 protected void onCreate(Bundle savedInstanceState) {
@@ -79,16 +68,16 @@ Inject View可以简化组件的查找注册，包括android自带的组件和�
           }
 ```
 
-目前，@InjectView可用于Activity、Dialog、Fragment中。在Activity和Dialog用法相似，在Fragment和Adapter中用法有一点区别。
+目前，@InjectView可用于Activity、Dialog、Fragment中。在Activity和Dialog用法相似，在Fragment中用法有一点区别。
 
 ```Java
           public class DemoFragment extends Fragment {
 
                    @InjectView(R.id.title)
-                   private TextView titleView;
+                   TextView titleView;
 
                    @InjectView(R.id.imageview)
-                   private ImageView imageView;
+                   ImageView imageView;
 
                    @Override
                    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -106,14 +95,14 @@ Inject View可以简化组件的查找注册，包括android自带的组件和�
            }
 ```
 
-Inject Views
+2. @InjectViews
 ---
 
 ```Java
           public class MainActivity extends Activity {
 
                 @InjectViews(ids={R.id.imageView1,R.id.imageView2})
-                private List<ImageView> imageviews;
+                ImageView[] imageviews;
 
                 @Override
                 protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +115,7 @@ Inject Views
  ```
 
 
-Inject Extra
+3. @InjectExtra
 ---
 
 ```Java
@@ -144,10 +133,10 @@ Inject Extra
          public class SecondActivity extends Activity{
 
                @InjectExtra(key="test")
-               private String testStr;
+               String testStr;
 
                @InjectExtra(key="test_object")
-               private Hello hello;
+               Hello hello;
 
                protected void onCreate(Bundle savedInstanceState) {
                    super.onCreate(savedInstanceState);
@@ -159,9 +148,9 @@ Inject Extra
           }
 ```
 
-OnClick
+4. @OnClick
 ---
-@OnClick 可以在Activity、Fragment、Dialog、View中使用，支持多个组件绑定同一个方法。
+@OnClick 可以在Activity、Fragment、Dialog、View中使用，也支持多个组件绑定同一个方法。
 
 ```Java
      public class AddCommentFragment extends BaseFragment {

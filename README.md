@@ -1,8 +1,35 @@
 # SAF-Kotlin-InjectView
 
-Dependency Injection是依赖注入的意思，简称DI。
+下载安装
 
-SAF中的依赖注入已经发展到第二个版本，由原先的运行时注解替换成编译时注解，底层依赖Square javapoet。整个库都是由kotlin来编写的。
+在根目录下的build.gradle中添加
+```groovy
+ buildscript {
+     repositories {
+         jcenter()
+     }
+     dependencies {
+         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+     }
+ }
+```
+在app 模块目录下的build.gradle中添加
+
+```groovy
+apply plugin: 'com.neenbedankt.android-apt'
+
+...
+
+dependencies {
+    compile 'com.safframework.injectview:saf-injectview:1.0.0'
+    apt 'com.safframework.injectview:saf-injectview-compiler:1.0.0'
+    ...
+}
+```
+
+这个库原本是SAF的Dependency Injection(依赖注入)模块，简称DI。现在用`Kotlin`全部重写。
+
+SAF中的依赖注入已经发展到第二个版本，由原先的运行时注解替换成编译时注解，底层依赖Square javapoet。
 其实，ButterKnife已经足够强大了，为何还要再做一套呢？因为这个模块更加轻量级。
 
 SAF中的DI包括以下几个方面：
@@ -37,7 +64,7 @@ Inject View可以简化组件的查找注册，包括android自带的组件和�
 ```Java
           public class MainActivity extends Activity {
 
-                @InjectView(id= R.id.imageview)
+                @InjectView(R.id.imageView)
                 private ImageView imageView;
 
                 @Override

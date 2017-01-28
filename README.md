@@ -29,6 +29,10 @@ dependencies {
 ![](injectview demo演示.gif)
 
 
+全部模块的设计：
+![](modules.png)
+
+
 # 使用方法：
 1. @InjectView
 ---

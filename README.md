@@ -192,6 +192,10 @@ dependencies {
     }
 ```
 
+TODO
+===
+1. 解决在 ListView 和 RecyclerView 上遇到的问题。
+
 License
 -------
 

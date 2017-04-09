@@ -33,8 +33,8 @@ apply plugin: 'com.neenbedankt.android-apt'
 ...
 
 dependencies {
-    compile 'com.safframework.injectview:saf-injectview:1.0.0'
-    apt 'com.safframework.injectview:saf-injectview-compiler:1.0.0'
+    compile 'com.safframework.injectview:saf-injectview:1.1.0'
+    apt 'com.safframework.injectview:saf-injectview-compiler:1.1.0'
     ...
 }
 ```
@@ -206,6 +206,10 @@ dependencies {
 TODO
 ===
 1. 解决在 ListView 和 RecyclerView 上遇到的问题。
+
+ChangeLog
+===
+[版本更新记录](CHANGELOG.md)
 
 License
 -------

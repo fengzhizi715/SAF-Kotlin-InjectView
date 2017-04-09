@@ -1,2 +1,4 @@
-include ':app', ':saf-injectview-compiler', ':saf-injectview'
+include ':app'
+include ':saf-injectview'
+include ':saf-injectview-compiler'
 include ':saf-injectview-annotations'

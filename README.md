@@ -1,6 +1,20 @@
 # SAF-Kotlin-InjectView
 
+[![@Tony沈哲 on weibo](https://img.shields.io/badge/weibo-%40Tony%E6%B2%88%E5%93%B2-blue.svg)](http://www.weibo.com/fengzhizi715)
+[![License](https://img.shields.io/badge/license-Apache%202-lightgrey.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+
 ![](logo.png)
+
+# 最新版本：
+
+模块|saf-injectview|saf-injectview-compiler|saf-injectview-annotation
+---|:-------------:|:-------------:|:-------------:
+最新版本|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview
+/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-compiler
+/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-annotation
+/_latestVersion)
+
 
 # 下载安装：
 在根目录下的build.gradle中添加

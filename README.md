@@ -39,7 +39,7 @@ dependencies {
 }
 ```
 
-![](injectview demo演示.gif)
+![](injectview_demo演示.gif)
 
 
 整个项目的module图：<br>

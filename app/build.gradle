@@ -42,9 +42,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.0.2'
     testCompile 'junit:junit:4.12'
 
-    compile project(':saf-injectview')
+    implementation project(':saf-injectview')
     annotationProcessor project(':saf-injectview-compiler')
-
-//    compile 'com.safframework.injectview:saf-injectview:1.0.0'
-//    apt 'com.safframework.injectview:saf-injectview-compiler:1.0.0'
 }

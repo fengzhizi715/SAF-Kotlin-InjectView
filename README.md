@@ -20,7 +20,7 @@
 ```groovy
 dependencies {
     implementation 'com.safframework.injectview:saf-injectview:1.1.1'
-    implementation 'com.safframework.injectview:saf-injectview-annotations:1.1.1'
+    implementation 'com.safframework.injectview:saf-injectview-annotation:1.1.1'
     annotationProcessor 'com.safframework.injectview:saf-injectview-compiler:1.1.1'
     ...
 }

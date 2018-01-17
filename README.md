@@ -10,13 +10,14 @@
 
 模块|saf-injectview|saf-injectview-compiler|saf-injectview-annotation
 ---|:-------------:|:-------------:|:-------------:
-最新版本|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-compiler/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-annotation/_latestVersion)
+最新版本|[ ![Download](https://api.bintray.com/packages/fengzhizi715/maven/saf-injectview/images/download.svg) ](https://bintray.com/fengzhizi715/maven/saf-injectview/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-compiler/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-annotation/_latestVersion)
 
 
 # 下载安装：
 
 在app 模块目录下的build.gradle中添加
 
+```groovy
 dependencies {
     implementation 'com.safframework.injectview:saf-injectview:1.1.1'
     implementation 'com.safframework.injectview:saf-injectview-annotations:1.1.1'

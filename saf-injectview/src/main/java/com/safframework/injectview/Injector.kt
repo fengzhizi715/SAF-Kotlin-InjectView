@@ -120,7 +120,7 @@ object Injector {
      *
      * @return
      */
-    @JvmStatic fun injectInto(obj: Object, v: View) {
+    @JvmStatic fun injectInto(obj: Any, v: View) {
         inject(obj, v, Finder.VIEW)
     }
 

@@ -10,7 +10,7 @@
 
 模块|saf-injectview|saf-injectview-compiler|saf-injectview-annotation
 ---|:-------------:|:-------------:|:-------------:
-最新版本|[ ![Download](https://api.bintray.com/packages/fengzhizi715/maven/saf-injectview/images/download.svg) ](https://bintray.com/fengzhizi715/maven/saf-injectview/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-compiler/_latestVersion)|[![Download](https://img.shields.io/badge/Download-1.1.0-red.svg)](https://bintray.com/fengzhizi715/maven/saf-injectview-annotation/_latestVersion)
+最新版本|[ ![Download](https://api.bintray.com/packages/fengzhizi715/maven/saf-injectview/images/download.svg) ](https://bintray.com/fengzhizi715/maven/saf-injectview/_latestVersion)| [ ![Download](https://api.bintray.com/packages/fengzhizi715/maven/saf-injectview-compiler/images/download.svg) ](https://bintray.com/fengzhizi715/maven/saf-injectview-compiler/_latestVersion)|[ ![Download](https://api.bintray.com/packages/fengzhizi715/maven/saf-injectview-annotation/images/download.svg) ](https://bintray.com/fengzhizi715/maven/saf-injectview-annotation/_latestVersion)
 
 
 # 下载安装：

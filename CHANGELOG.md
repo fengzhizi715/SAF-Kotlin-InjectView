@@ -1,5 +1,10 @@
-SAF-AOP
+SAF-Kotlin-InjectView
 ===
+
+Version 1.1.2
+---
+2017-02-13
+ *  Kotlin版本升级到1.2.31
 
 Version 1.1.1
 ---

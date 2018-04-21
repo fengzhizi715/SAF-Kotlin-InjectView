@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.10'
+    ext.kotlin_version = '1.2.31'
 
     repositories {
         jcenter()
@@ -36,6 +36,6 @@ task clean(type: Delete) {
 }
 
 tasks.getByPath(":saf-injectview:releaseAndroidJavadocs").enabled = false
-tasks.getByPath(":saf-injectview::bintrayUpload").enabled = true
-tasks.getByPath(":saf-injectview-compiler:bintrayUpload").enabled = false
-tasks.getByPath(":saf-injectview-annotations:bintrayUpload").enabled = false
+tasks.getByPath(":saf-injectview::bintrayUpload").enabled = false
+tasks.getByPath(":saf-injectview-compiler:bintrayUpload").enabled = true
+tasks.getByPath(":saf-injectview-annotations:bintrayUpload").enabled = true
